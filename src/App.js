@@ -10,7 +10,7 @@ class App extends Component {
     charaters: charaters
   };
 
-  removeFriend = id => {
+  pushCharater = id => {
     // Filter this.state.friends for friends with an id not equal to the id being removed
     const charaters = this.state.charaters.filter(friend => friend.id !== id);
     // Set this.state.friends equal to the new friends array
@@ -21,10 +21,11 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Title>Friends List</Title>
+        <Title>Clicky Game!<br />
+Click on an image to earn points, but don't click on any more than once!</Title>
         {this.state.charaters.map(friend => (
           <PicCard
-            removeFriend={this.removeFriend}
+            pushCharater={this.pushCharater}
             id={friend.id}
             key={friend.id}
             name={friend.name}
