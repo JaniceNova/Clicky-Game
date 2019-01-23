@@ -7,14 +7,19 @@ import charaters from "./charaters.json";
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
-    charaters: charaters
+    charaters: charaters,
+    charatersGuessed: []
   };
 
   pushCharater = id => {
+    // const charaters = this.state.charaters.filter(friend => friend.id !== id);
+    // this.setState({ charaters });
     // Filter this.state.friends for friends with an id not equal to the id being removed
-    const charaters = this.state.charaters.filter(friend => friend.id !== id);
+    let charatersGuessed = this.state.charatersGuessed
+    charatersGuessed = this.state.charatersGuessed.push(this.id);
     // Set this.state.friends equal to the new friends array
-    this.setState({ charaters });
+    this.setState({ charatersGuessed: charatersGuessed });
+    console.log(charatersGuessed)
   };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
