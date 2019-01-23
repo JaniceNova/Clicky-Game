@@ -1,8 +1,12 @@
 import React from "react";
 import piccard from "./components/piccard";
 
-function App() {
+class app extends React.Component {
+
+    
+render() {
   return <div>hi</div>;
 }
+}
 
-export default App;
+export default app;
